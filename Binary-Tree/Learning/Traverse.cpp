@@ -37,25 +37,30 @@ void Postorder(Node* root, vector<int>&ans2) {
 } 
 int main()
 {
-    struct Node *root = new Node(1);
+    struct Node *root = new Node(4);
     root->left = new Node(2);
-    root->right = new Node(3);
-    root->left->right = new Node(5);
+    root->left->left = new Node(3);
+    root->left->right = new Node(9);
+    root->left->right->left = new Node(1);
+    root->right = new Node(5);
+    root->right->left = new Node(7);
+    root->right->right = new Node(6);
+    root->right->right->left = new Node(8);
     vector<int>ans,ans1,ans2;
     Preorder(root,ans);
-    Inorder(root,ans1);
-    Postorder(root,ans2);
+    // Inorder(root,ans1);
+    // Postorder(root,ans2);
     cout<<"Preorder: ";
     for(auto it:ans) {
         cout<<it<<" ";
     }
-    cout<<endl<<"Inorder: ";
-    for(auto it:ans1) {
-        cout<<it<<" ";
-    }
-    cout<<endl<<"Postorder: ";
-    for(auto it:ans2) {
-        cout<<it<<" ";
-    }
+    // cout<<endl<<"Inorder: ";
+    // for(auto it:ans1) {
+    //     cout<<it<<" ";
+    // }
+    // cout<<endl<<"Postorder: ";
+    // for(auto it:ans2) {
+    //     cout<<it<<" ";
+    // }
     return 0;
 }
